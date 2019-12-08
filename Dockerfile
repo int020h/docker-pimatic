@@ -1,6 +1,6 @@
 FROM node:alpine
 
-RUN /bin/sh -c addgroup -S pimatic && adduser -G pimatic -S -D pimatic && mkdir /home/pimatic/pimatic-app && \
+RUN addgroup -S pimatic && adduser -G pimatic -S -D pimatic && mkdir /home/pimatic/pimatic-app && \
     apk update && apk add --no-cache python build-base tzdata && \
     cd home/pimatic && npm install pimatic --prefix pimatic-app --production && \
     cat /home/pimatic/pimatic-app/node_modules/pimatic/config_default.json | sed 's/"password": "",/"password": "admin",/' > /home/pimatic/pimatic-app/config.json && \
