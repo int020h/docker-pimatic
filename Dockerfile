@@ -9,6 +9,6 @@ RUN addgroup -S pimatic && adduser -G pimatic -S -D pimatic && mkdir /home/pimat
     npm install pimatic-cron pimatic-mobile-frontend pimatic-iframe pimatic-shell-execute pimatic-sunrise pimatic-sysinfo pimatic-ping@0.9.5 && \
     cp /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime && echo "Europe/Amsterdam" > /etc/timezone && apk del tzdata
 
-CMD ["/bin/sh" "-c" "cd /home/pimatic/pimatic-app && ./node_modules/pimatic/pimatic.js"]
+CMD cd /home/pimatic/pimatic-app && ./node_modules/pimatic/pimatic.js
 
 EXPOSE 80
