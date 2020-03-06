@@ -11,4 +11,4 @@ RUN addgroup -S pimatic && adduser -G pimatic -S -D pimatic && mkdir /home/pimat
 
 CMD cd /home/pimatic/pimatic-app && ./node_modules/pimatic/pimatic.js
 
-EXPOSE 8080
+EXPOSE 80
